@@ -268,7 +268,6 @@ const project = process.env.VUE_APP_PROJECT
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
 const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
-const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
@@ -306,11 +305,7 @@ export default {
           "自动判断客户端": "auto",
         },
         shortTypes: {
-          "v1.mk":"https://v1.mk/short",
-          "d1.mk":"https://d1.mk/short",
-          "dlj.tf":"https://dlj.tf/short",
-          "suo.yt":"https://suo.yt/short",
-          "sub.cm":"https://sub.cm/short",
+          "020.name":"https://020.name/",
         },
         customBackend: {
           "肥羊增强型后端【vless+负载均衡】": "https://api.v1.mk/sub?",
@@ -703,7 +698,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: "https://api.v1.mk/sub?",
-        shortType: "https://v1.mk/short",
+        shortType: "https://020.name/",
         remoteConfig: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini",
         excludeRemarks: "",
         includeRemarks: "",
@@ -965,26 +960,21 @@ export default {
         return false;
       }
       
-      let duan =
-        this.form.shortType === ""
-          ? shortUrlBackend
-          : this.form.shortType;
-      
       this.loading = true;
 
       let data = new FormData();
-      data.append("longUrl", btoa(this.customSubUrl));
+      data.append("url", this.customSubUrl);
 
       this.$axios
-        .post(duan, data, {
+        .post(this.form.shortType, data, {
           header: {
-            "Content-Type": "application/form-data; charset=utf-8"
+            "Content-Type": "application/json; charset=utf-8"
           }
         })
         .then(res => {
-          if (res.data.Code === 1 && res.data.ShortUrl !== "") {
-            this.curtomShortSubUrl = res.data.ShortUrl;
-            this.$copyText(res.data.ShortUrl);
+          if (res.data.status === 200 && res.data.key !== "") {
+            this.curtomShortSubUrl = res.data.key;
+            this.$copyText(res.data.key);
             this.$message.success("短链接已复制到剪贴板");
           } else {
             this.$message.error("短链接获取失败：" + res.data.Message);
