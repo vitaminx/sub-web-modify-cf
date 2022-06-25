@@ -306,7 +306,6 @@ export default {
         },
         shortTypes: {
           "OneKing短链接":"https://fto.cc/",
-          "OKing短链接":"https://saam.ga/",
         },
         customBackend: {
           "OneKing后端": "https://suc.ecgcc.cc/sub?",
