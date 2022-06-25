@@ -9,7 +9,7 @@
           <svg-icon class="bilibili" icon-class="bilibili" style="float:right;margin-left:10px" @click="gotoBiliBili" />
           <svg-icon class="youguan" icon-class="youtube" style="float:right;margin-left:10px" @click="gotoYouTuBe" />
           <svg-icon class="channel" icon-class="telegram" style="float:right;margin-left: 10px" @click="gotoTgChannel" />
-          <div style="text-align:center;font-size:15px">订 阅 转 换</div>
+          <div style="text-align:center;font-size:15px">OneKing 订 阅 转 换</div>
           </div>
           
           <el-container>
@@ -305,9 +305,11 @@ export default {
           "自动判断客户端": "auto",
         },
         shortTypes: {
-          "020.name":"https://020.name/",
+          "OneKing短链接":"https://fto.cc/",
+          "OKing短链接":"https://saam.ga/",
         },
         customBackend: {
+          "OneKing后端": "https://suc.ecgcc.cc/sub?",
           "肥羊增强型后端【vless+负载均衡】": "https://api.v1.mk/sub?",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one/sub?",
           "品云提供后端【实验性】": "https://v.id9.cc/sub?",
@@ -317,6 +319,7 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io/sub?",
         },
         backendOptions: [
+          { value: "https://suc.ecgcc.cc/sub?" },
           { value: "https://api.v1.mk/sub?" },
           { value: "https://api.tsutsu.one/sub?" },
           { value: "https://v.id9.cc/sub?" },
@@ -697,8 +700,8 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://api.v1.mk/sub?",
-        shortType: "https://020.name/",
+        customBackend: "https://suc.ecgcc.cc/sub?",
+        shortType: "https://fto.cc/",
         remoteConfig: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini",
         excludeRemarks: "",
         includeRemarks: "",
@@ -854,7 +857,7 @@ export default {
       window.open(url + this.customSubUrl);
     },
     gotovideo() {
-    this.$alert("别忘了关注友善的肥羊哦！",{
+    this.$alert("别忘了关注OneKing哦！",{
 	type: "warning",
 	confirmButtonText: '确定',
 	customClass: 'msgbox',
