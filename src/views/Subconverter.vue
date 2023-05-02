@@ -11,7 +11,7 @@
           <svg-icon class="channel" icon-class="telegram" style="float:right;margin-left: 10px" @click="gotoTgChannel" />
           <div style="text-align:center;font-size:15px">OneKing 订 阅 转 换</div>
           </div>
-          
+
           <el-container>
             <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
               <el-form-item label="订阅链接:">
@@ -43,8 +43,8 @@
 
               </el-form-item>
               <el-form-item label="短链选择:">
-                <el-select 
-                  v-model="form.shortType" 
+                <el-select
+                  v-model="form.shortType"
                   allow-create
                   filterable
                   placeholder="可输入其他可用短链API"
@@ -86,7 +86,7 @@
                       style="width: 100%;"
                       icon="el-icon-more-outline"
                      >点击显示/隐藏</el-button>
-                    </el-form-item>    
+                    </el-form-item>
                     </template>
                     <el-form-item label="包含节点:">
                     <el-input v-model="form.includeRemarks" placeholder="要保留的节点，支持正则" />
@@ -112,15 +112,15 @@
                       </el-row>
                       <el-row :gutter="10">
                         <el-col :span="12"><el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox></el-col>
-                        <el-col :span="12"><el-checkbox v-model="form.sort" label="排序节点"></el-checkbox></el-col>          
-                      </el-row>    
+                        <el-col :span="12"><el-checkbox v-model="form.sort" label="排序节点"></el-checkbox></el-col>
+                      </el-row>
                       <el-row :gutter="10">
                         <el-col :span="12"><el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox></el-col>
                         <el-col :span="12"><el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox></el-col>
                       </el-row>
                       <el-row :gutter="10">
                         <el-col :span="12"><el-checkbox v-model="form.appendType" label="插入节点类型"></el-checkbox></el-col>
-                        <el-col :span="12"><el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox></el-col>                        
+                        <el-col :span="12"><el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox></el-col>
                       </el-row>
                       <el-row :gutter="10">
                         <el-col :span="12"><el-checkbox v-model="form.expand" label="展开规则全文"></el-checkbox></el-col>
@@ -133,7 +133,7 @@
                       <el-button slot="reference">更多选项</el-button>
                     </el-popover>
                   </el-row>
-                </el-form-item>    
+                </el-form-item>
                 </el-collapse-item>
                 </el-collapse>
                 </el-form-item>
@@ -141,11 +141,11 @@
               <div style="margin-top: 30px"></div>
 
               <el-divider content-position="center">
-                <el-button 
+                <el-button
                  type="zhuti"
                  @click="change">
-                 <i id="rijian" class="el-icon-sunny" ></i>  
-                 <i id="yejian" class="el-icon-moon" ></i>    
+                 <i id="rijian" class="el-icon-sunny" ></i>
+                 <i id="yejian" class="el-icon-moon" ></i>
                  </el-button>
               </el-divider>
 
@@ -272,7 +272,7 @@ const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
-const downld = process.env.VUE_APP_CFA 
+const downld = process.env.VUE_APP_CFA
 const bmvideo = process.env.VUE_APP_VIDEO
 
 export default {
@@ -436,7 +436,7 @@ export default {
               {
                 label: "分区域无自动测速",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_NoAuto.ini"
-              }, 
+              },
               {
                 label: "OoHHHHHHH",
                 value: "https://raw.githubusercontent.com/OoHHHHHHH/ini/master/config.ini"
@@ -614,7 +614,7 @@ export default {
               {
                 label: "咸鱼",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/xianyu.ini"
-              },    
+              },
               {
                 label: "便利店",
                 value: "https://subweb.oss-cn-hongkong.aliyuncs.com/RemoteConfig/customized/convenience.ini"
@@ -622,7 +622,7 @@ export default {
               {
                 label: "CNIX",
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/SSRcloud.ini"
-              },    
+              },
               {
                 label: "Nirvana",
                 value: "https://raw.githubusercontent.com/Mazetsz/ACL4SSR/master/Clash/config/V2rayPro.ini"
@@ -638,7 +638,7 @@ export default {
               {
                 label: "史迪仔-负载均衡",
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Stitch-Balance.ini"
-              },    
+              },
               {
                 label: "Maying",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/maying.ini"
@@ -768,26 +768,26 @@ export default {
     },
     anhei() {
       const getLocalTheme = window.localStorage.getItem("localTheme");
-      const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)'); 
-      const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); 
+      const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)');
+      const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
       if (getLocalTheme) {
         document.getElementsByTagName('body')[0].className = getLocalTheme;
       } //读取localstorage，优先级最高！
       else if (getLocalTheme == null || getLocalTheme == "undefined" || getLocalTheme == "") {
       if (new Date().getHours() >= 19 || new Date().getHours() < 7) {
-        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');  
-      } 
+        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
+      }
       else {
-        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');  
-      } //根据当前时间来判断，用来对付QQ等不支持媒体变量查询的浏览器
-      if (lightMode && lightMode.matches) { 
         document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-      } 
-      if (darkMode && darkMode.matches) { 
+      } //根据当前时间来判断，用来对付QQ等不支持媒体变量查询的浏览器
+      if (lightMode && lightMode.matches) {
+        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+      }
+      if (darkMode && darkMode.matches) {
         document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
       } //根据窗口主题来判断当前主题！
-     }  
-    },  
+     }
+    },
     change() {
       var zhuti = document.getElementsByTagName('body')[0].className;
       if (zhuti === 'light-mode'){
@@ -799,13 +799,13 @@ export default {
       window.localStorage.setItem('localTheme','light-mode');
       }
     },
-    tanchuang() {
-      this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">牧场物语官网：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞合租网站：</span><span><a href="https://www.ihezu.shop" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有CN2+BGP+IEPL内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`, '临时广告', {
-        confirmButtonText: '确定',
-        dangerouslyUseHTMLString: true,
-        customClass: 'msgbox'
-      });
-    },
+    // tanchuang() {
+    //   this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">牧场物语官网：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞合租网站：</span><span><a href="https://www.ihezu.shop" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有CN2+BGP+IEPL内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`, '临时广告', {
+    //     confirmButtonText: '确定',
+    //     dangerouslyUseHTMLString: true,
+    //     customClass: 'msgbox'
+    //   });
+    // },
     onCopy() {
       this.$message.success("Copied!");
     },
@@ -819,10 +819,10 @@ export default {
       window.open(gayhubRelease);
     },
 	gotoBiliBili() {
-      window.open(bzlink);    
+      window.open(bzlink);
     },
     gotoYouTuBe() {
-      window.open(yglink);    
+      window.open(yglink);
     },
     cldown() {
       window.open(downld);
@@ -961,7 +961,7 @@ export default {
         this.$message.warning("请先生成订阅链接，再获取对应短链接");
         return false;
       }
-      
+
       this.loading = true;
 
       let data = new FormData();
